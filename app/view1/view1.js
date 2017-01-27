@@ -11,11 +11,11 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .controller('View1Ctrl', ['$scope',function($scope) {
   $scope.data = [
-    { IsImpact: true, Name: "item 1"},
-  { IsImpact: false, Name: "item 2", ItemType: "category1"},
-  { IsImpact: false, Name: "item 3", ItemType: "category2"},
-  { IsImpact: false, Name: "item 4", ItemType: "category3"},
-  { IsImpact: true, Name: "item 5", ItemType: "category4"}
+    { IsSpecial: true, Name: "item 1"},
+  { IsSpecial: false, Name: "item 2", ItemType: "category1"},
+  { IsSpecial: false, Name: "item 3", ItemType: "category2"},
+  { IsSpecial: false, Name: "item 4", ItemType: "category3"},
+  { IsSpecial: true, Name: "item 5", ItemType: "category4"}
   ];
 
   $scope.colours = ['yellowItem','redItem','blueItem','pinkItem','greenItem','purpleItem','whiteItem','brownItem'];
