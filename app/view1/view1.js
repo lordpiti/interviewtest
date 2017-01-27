@@ -9,6 +9,10 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [function() {
-
+.controller('View1Ctrl', ['$scope',function($scope) {
+  $scope.data = [{ IsImpact: true, Name: "su madre"},
+  { IsImpact: false, Name: "su madre"},
+  { IsImpact: false, Name: "su madre"},
+  { IsImpact: false, Name: "su madre"},
+  { IsImpact: true, Name: "su madre"}];
 }]);

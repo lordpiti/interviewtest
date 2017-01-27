@@ -1,1 +1,12 @@
 <p>This is the partial for view 1.</p>
+
+<div class="row">
+    <div ng-repeat="item in data track by $index" class="col-md-4 gridItem yellowItem">
+        {{item.Name}}
+        <div ng-if="item.IsImpact">IS IMPACT!</div>
+        <button class="btn btn-default" ng-click="delete(item)">delete</button>
+    </div>
+</div>
+
+<input type="text" id="hh" name="haha" />
+<button class="btn btn-default">add</button>

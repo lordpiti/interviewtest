@@ -23,3 +23,21 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+.gridItem {
+  height: 200px;
+  border: solid;
+  border-color: black;
+}
+
+.yellowItem {
+  background-color: yellow;
+}
+
+.blueItem {
+  background-color: blue;
+}
+
+.redItem {
+  background-color: red;
+}
