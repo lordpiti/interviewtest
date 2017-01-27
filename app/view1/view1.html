@@ -1,12 +1,26 @@
 <p>This is the partial for view 1.</p>
 
 <div class="row">
-    <div ng-repeat="item in data track by $index" class="col-md-4 gridItem yellowItem">
-        {{item.Name}}
-        <div ng-if="item.IsImpact">IS IMPACT!</div>
-        <button class="btn btn-default" ng-click="delete(item)">delete</button>
+    <div ng-repeat="item in data track by $index" class="col-md-4 gridItem yellowItem" ng-class="colours[$index%colours.length]">
+        <div class="row">
+            <div class="col-md-6">{{item.Name}}</div>
+            <div class="col-md-6">{{item.ItemType}}</div>
+        </div>
+        <!-- ng-class="{ 'blueItem': $index%3==0}" -->
+        <div ng-if="item.IsImpact">IS SPECIAL!</div>
+        <button class="btn btn-default" ng-click="deleteItem(item)">delete</button>
     </div>
 </div>
+<form name="addItemForm">
+    <input type="text" id="haha" name="haha" ng-model="itemToAdd.Name" required />
+    <div ng-if="addItemForm.haha.$error.required && addItemForm.haha.$dirty">required</div>
 
-<input type="text" id="hh" name="haha" />
-<button class="btn btn-default">add</button>
+    <select id="itemType" name="itemType" ng-model="itemToAdd.ItemType" required>
+        <option value="category1">category 1</option>
+        <option value="category2">category 2</option>
+        <option value="category3">category 3</option>
+    </select>
+    <div ng-if="addItemForm.itemType.$error.required && addItemForm.itemType.$dirty">required</div>
+</form>
+
+<button class="btn btn-default" ng-click="addItem(itemToAdd)" ng-disabled="addItemForm.$invalid">add</button>
