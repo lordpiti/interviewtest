@@ -1,7 +1,18 @@
 <p>This is the partial for view 1.</p>
 
 <div class="row">
-    <div ng-repeat="item in data track by $index" class="col-md-4 gridItem yellowItem" ng-class="colours[$index%colours.length]">
+    <div class="col-md-12">
+        filter by item type:
+        <select id="itemType" name="itemType" ng-model="search.ItemType">
+            <option value="">All</option>
+            <option value="category1">category 1</option>
+            <option value="category2">category 2</option>
+            <option value="category3">category 3</option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div ng-repeat="item in data | filter: { ItemType: search.ItemType} track by $index" class="col-md-4 gridItem yellowItem" ng-class="colours[$index%colours.length]">
         <div class="row">
             <div class="col-md-6">{{item.Name}}</div>
             <div class="col-md-6">{{item.ItemType}}</div>
